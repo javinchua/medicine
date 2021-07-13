@@ -1,0 +1,10 @@
+{% extends "tracker/layout.html" %}
+
+{% block body %}
+<h2> Medicine Consumption Tracker</h2>
+
+<form action = "{% url 'reset' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Reset</button>
+</form>
+{% endblock %}

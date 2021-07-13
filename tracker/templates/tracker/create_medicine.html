@@ -1,0 +1,13 @@
+{% extends "tracker/layout.html" %}
+
+{% block body %}
+<h2> Add New Medicine </h2>
+
+<form action = "{% url 'create_medicine' %}" method="post">
+    {% csrf_token %}
+    <table>
+        {{ medicine_form}}
+    </table>
+    <input type="submit">
+</form>
+{% endblock %}

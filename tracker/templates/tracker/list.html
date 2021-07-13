@@ -1,0 +1,21 @@
+{% extends "tracker/layout.html" %}
+
+{% block body %}
+<h2> Medicine Consumption Tracker</h2>
+
+{% for medicine in medicines %}
+<div>Name: {{medicine.name}}</div>
+<div>Number of Pills: {{medicine.number}}</div>
+<div>Time for consumption: {{medicine.time}}</div>
+<div>
+    <a href = "{% url 'take' medicine.id%}">
+    {% if medicine.taken == False %}
+    <p>&#10060</p>
+    {% else %}
+    <p>&#9989</p>
+    {% endif %}
+    </a>
+</div>
+
+{% endfor %}
+{% endblock %}
